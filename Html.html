@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>Local Storage Test</title>
+	<script>
+	function savelocal() {
+		var fieldValue = document.getElementById('textfiled').value;
+		localStorage.setItem('text', fieldValue);
+	}
+
+	function load() {
+		var storedValue = localStorage.getItem('text');
+		if(storedValue) {
+		document.getElementById('textfield').value = storedValue;
+				}
+			}
+	function removelocal() {
+		document.getElementById('textfiled').value = '';
+		localStorage.removeItem('text');
+	}
+			
+	</script>
+</head>
+<body>
+<input type="text" id="textfield" />
+<input type="button" value="Save" onclick="savelocal()" />
+<input type="button" value="Remove" onclick="removelocal()" />
+
+</body>
+</html>
+
